@@ -1,0 +1,48 @@
+$primary-color: #1C345E;
+$secondary-color: #333333;
+
+.banner {
+  background-image: url('/assets/bannerIT.png');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .section-main {
+    width: 50%;
+    text-align: center;
+
+    h1, h3 {
+      color: $primary-color;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 50vh;
+
+    .section-main {
+      width: 80%;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+
+
+

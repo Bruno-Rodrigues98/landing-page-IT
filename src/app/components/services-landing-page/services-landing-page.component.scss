@@ -1,0 +1,74 @@
+$primary-color: #1C345E;
+$secondary-color: #333333;
+
+.card-container {
+  display: flex;
+  justify-content: center;
+
+  background: linear-gradient(#fff,#F8F8F8,#E3E4E6,#F1F1F3,#fff);
+}
+
+.card-row {
+  display: flex;
+}
+
+.card-col {
+  margin-right: 10px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  height: 50vh;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover{
+    transform: scale(1.10);
+  }
+
+  .card-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $primary-color;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .card-body {
+    font-size: 15px;
+    color: $primary-color;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card-col {
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card-col {
+    flex-basis: 100%;
+  }
+}
+
+// adicionando o estilo abaixo para que os cards apareçam um abaixo do outro
+@media only screen and (max-width: 576px) {
+  .card-row {
+    display: block;
+  }
+  .card-col {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+

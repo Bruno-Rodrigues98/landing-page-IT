@@ -1,0 +1,86 @@
+<div class="container-box">
+  <div class="contact-box">
+    <div class="contact-left">
+        <h2>Agente uma demonstração</h2>
+
+        <form (ngSubmit)="submit()" [formGroup]="form" #formDir="ngForm">
+          <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+            Obrigado! O agendamento foi realizado com sucesso.
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="showDanger">
+            Aviso! Houve algum erro. Tente novamente
+          </div>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="nome">Nome</label>
+              <input type="text" placeholder="Bruno Silva" id="nome"  name="nome"
+               formControlName="nome">
+               <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="nome.errors?.['required']">Informe seu nome</p>
+               </div>
+            </div>
+            <div class="input-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" placeholder="11 958701473" id="telefone"  name="telefone" formControlName="telefone">
+               <div *ngIf="telefone.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="telefone.errors?.['required']">Informe seu telefone</p>
+               </div>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="Bruno@gmail.com" name="email" formControlName="email" >
+              <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="email.errors?.['required']">Informe seu E-mail</p>
+               </div>
+            </div>
+            <div class="input-group">
+              <label for="datahora">Data e Hora:</label>
+              <input type="datetime-local" id="datahora" name="datahora" formControlName="datahora">
+               <div *ngIf="datahora.invalid && formDir.submitted" class="validation-error" >
+                <p *ngIf="datahora.errors?.['required']">Informe a Data e Hora</p>
+               </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="modulos">Escolha o módulo:</label>
+            <select id="modulos" name="modulos" formControlName="modulo">
+              <option *ngFor="let modulo of modulos" [value]="modulo.value">{{ modulo.label }}</option>
+            </select>
+          </div>
+          <button type="submit" class="submit">Enviar</button>
+        </form>
+    </div>
+    <div class="contact-right">
+      <h2>Entre em contato conosco</h2>
+
+      <table>
+        <tr>
+          <td>E-mail</td>
+          <td>faleconosco@integraltrust.com.br</td>
+        </tr>
+
+        <tr>
+          <td>Telefone</td>
+          <td>+55 11 3103 2503</td>
+        </tr>
+
+        <tr>
+          <td>Endereço</td>
+          <td>Av. Brigadeiro Faria Lima, 1.744, 2º andar
+            CEP: 01451-910 | São Paulo | SP</td>
+        </tr>
+      </table>
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com/integralgroup/" target="_blank"><fa-icon [icon]="instagramIcon"></fa-icon></a>
+        <a href="https://www.linkedin.com/company/integral-trust/" target="_blank"><fa-icon [icon]="linkedinIcon"></fa-icon></a>
+        <a href="https://www.youtube.com/channel/UCuHRRlM3-c6FH9_iYLchlSA" target="_blank"><fa-icon [icon]="youtubeIcon"></fa-icon></a>
+      </div>
+
+    </div>
+  </div>
+</div>

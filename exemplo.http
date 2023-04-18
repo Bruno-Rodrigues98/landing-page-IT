@@ -1,0 +1,36 @@
+http://localhost:3000/form
+
+###
+
+POST http://localhost:3000/form HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Rodrigo",
+    "email": "Rodrigo@gmail.com",
+    "telefone": "119365870143",
+    "datahora": ""
+}
+
+###
+PUT http://localhost:3000/form/2 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Leícia Silva",
+    "email": "leticia@gmail.com",
+    "telefone": "119365870143",
+    "datahora": ""
+}
+
+###
+DELETE  http://localhost:3000/form/10 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Leícia Silva",
+    "email": "leticia@gmail.com",
+    "telefone": "119365870143",
+    "datahora": ""
+}
+
